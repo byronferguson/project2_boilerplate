@@ -10,7 +10,7 @@ router.post('/login', passport.authenticate('local'), (req, res) => {
   // Sending back a password, even a hashed password, isn't a good idea
   res.json({
     email: req.user.email,
-    id: req.user.id
+    id: req.user.id,
   });
 });
 
@@ -25,12 +25,6 @@ router.post('/signup', (req, res) => {
     .catch((err) => {
       res.status(401).json(err);
     });
-});
-
-// Route for logging user out
-router.get('/logout', (req, res) => {
-  req.logout();
-  res.redirect('/');
 });
 
 // Route for getting some data about our user to be used client side
