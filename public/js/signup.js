@@ -11,7 +11,7 @@ $(document).ready(() => {
     event.preventDefault();
     const userData = {
       email: emailInput.val().trim(),
-      password: passwordInput.val().trim(),
+      password: passwordInput.val().trim()
     };
 
     if (!userData.email || !userData.password) {
@@ -25,10 +25,10 @@ $(document).ready(() => {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(email, password) {
+  function signUpUser (email, password) {
     $.post('/api/signup', {
       email: email,
-      password: password,
+      password: password
     })
       .then(() => {
         window.location.replace('/members');
@@ -37,7 +37,7 @@ $(document).ready(() => {
       .catch(handleLoginErr);
   }
 
-  function handleLoginErr(err) {
+  function handleLoginErr (err) {
     $('#alert .msg').text(err.responseJSON);
     $('#alert').fadeIn(500);
   }
