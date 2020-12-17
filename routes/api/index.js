@@ -1,4 +1,4 @@
-var router = require('express').Router();
+const router = require('express').Router();
 // Requiring our models and passport as we've configured it
 const db = require('../../models');
 const passport = require('../../config/passport');
@@ -10,7 +10,7 @@ router.post('/login', passport.authenticate('local'), (req, res) => {
   // Sending back a password, even a hashed password, isn't a good idea
   res.json({
     email: req.user.email,
-    id: req.user.id,
+    id: req.user.id
   });
 });
 
