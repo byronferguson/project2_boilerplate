@@ -27,12 +27,6 @@ router.post('/signup', (req, res) => {
     });
 });
 
-// Route for logging user out
-router.get('/logout', (req, res) => {
-  req.logout();
-  res.redirect('/');
-});
-
 // Route for getting some data about our user to be used client side
 router.get('/user_data', (req, res) => {
   if (!req.user) {
