@@ -12,9 +12,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm ci
       - uses: akhileshns/heroku-deploy@v3.7.8 # This is the action
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: 'project2-bsf' #Must be unique in Heroku
-          heroku_email: 'ferguson.bs@gmail.com'
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }} # Must be unique in Heroku (e.g. 'project2-bsf')
+          heroku_email: ${{ secrets.HEROKU_ACCOUNT_EMAIL }} # Must be the email used to sign into Heroku (e.g. 'ferguson.bs@gmail.com')
