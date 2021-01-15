@@ -51,9 +51,7 @@ app.use(routes);
 db.sequelize.sync(SYNC_OPTIONS).then(() => {
   app.listen(PORT, () => {
     console.log(
-      '==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.',
-      PORT,
-      PORT
+      `==> 🌎  Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`
     );
   });
 });
